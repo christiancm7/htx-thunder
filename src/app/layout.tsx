@@ -12,11 +12,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Pocket',
-    default: 'Pocket - Invest at the perfect time.',
+    template: '%s - Thunder Gym',
+    default: 'Thunder Gym',
   },
   description:
-    'By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses.',
+    'Discover a dynamic range of offerings including tournaments, private training sessions, camps, and open gym access. Whether you are a seasoned player honing your skills or a newcomer eager to learn, our state-of-the-art facility and expert coaching staff are here to elevate your game.',
 }
 
 export default function RootLayout({

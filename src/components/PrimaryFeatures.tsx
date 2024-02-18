@@ -26,7 +26,8 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
-
+import Shooting from '../images/shooting.png'
+import Image from 'next/image'
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
 
@@ -420,15 +421,8 @@ function FeaturesDesktop() {
         {features.map((feature, featureIndex) => (
           <div
             key={feature.name}
-            className="relative rounded-2xl transition-colors hover:bg-gray-800/30"
+            className="relative rounded-2xl bg-gray-800/30 transition-colors"
           >
-            {featureIndex === selectedIndex && (
-              <motion.div
-                layoutId="activeBackground"
-                className="absolute inset-0 bg-gray-800"
-                initial={{ borderRadius: 16 }}
-              />
-            )}
             <div className="relative z-10 p-8">
               <feature.icon className="h-8 w-8" />
               <h3 className="mt-6 text-lg font-semibold text-white">
@@ -437,9 +431,7 @@ function FeaturesDesktop() {
                   {feature.name}
                 </Tab>
               </h3>
-              <p className="mt-2 text-sm text-gray-400">
-                {feature.description}
-              </p>
+              <p className="mt-2 text-sm text-white">{feature.description}</p>
             </div>
           </div>
         ))}
@@ -448,7 +440,7 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#13B5C8" className="animate-spin-slower" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -470,7 +462,16 @@ function FeaturesDesktop() {
               )}
             </AnimatePresence>
           </Tab.Panels>
-        </PhoneFrame>
+        </PhoneFrame> */}
+        <div className="relative z-50 mx-auto">
+          <Image
+            src={Shooting}
+            alt="dunk"
+            style={{
+              height: '80%',
+            }}
+          />
+        </div>
       </div>
     </Tab.Group>
   )
@@ -571,16 +572,30 @@ function FeaturesMobile() {
 export function PrimaryFeatures() {
   return (
     <section
-      id="features"
-      aria-label="Features for investing all your money"
-      className="bg-gray-900 py-20 sm:py-32"
+      id="facility"
+      className="py-20 sm:py-32"
+      style={{
+        backgroundImage: "url('/court.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       <Container>
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            Every feature you need to win. Try it for yourself.
+        <div className="mx-auto">
+          <h2
+            className="text-center text-5xl font-semibold tracking-tight text-white"
+            style={{
+              textShadow: 'black 1px 0 5px;',
+            }}
+          >
+            HT Training Facility
           </h2>
-          <p className="mt-2 text-lg text-gray-400">
+          <p
+            className="mt-2 text-lg text-white"
+            style={{
+              textShadow: 'black 1px 0 2px;',
+            }}
+          >
             Pocket was built for investors like you who play by their own rules
             and aren’t going to let SEC regulations get in the way of their
             dreams. If other investing tools are afraid to build it, Pocket has

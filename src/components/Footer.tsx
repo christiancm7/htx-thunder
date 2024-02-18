@@ -29,8 +29,23 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
               <div className="ml-4">
-                <p className="text-base font-semibold">Pocket</p>
-                <p className="mt-1 text-sm">Invest at the perfect time.</p>
+                <p className="text-base font-semibold">Houston Thunder Gym</p>
+                <p className="mt-1 text-sm">
+                  <a
+                    href="https://maps.google.com/maps?q=5811+Chimney+Rock+Road+Houston+TX+77081"
+                    target="_blank"
+                  >
+                    5811 Chimney Rock Road Houston, TX 77081
+                  </a>
+                </p>
+                <p className="mt-1 text-sm">
+                  <a href="mailto:nick@htownthunder.com">
+                    nick@htownthunder.com
+                  </a>
+                </p>
+                <p className="mt-1 text-sm">
+                  <a href="tel:281-889-0047">281-889-0047</a>
+                </p>
               </div>
             </div>
             <nav className="mt-11 flex gap-8">
@@ -71,7 +86,8 @@ export function Footer() {
             </Button>
           </form>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
-            &copy; Copyright {new Date().getFullYear()}. All rights reserved.
+            &copy; Copyright Houston Thunder Gym {new Date().getFullYear()}. All
+            rights reserved.
           </p>
         </div>
       </Container>

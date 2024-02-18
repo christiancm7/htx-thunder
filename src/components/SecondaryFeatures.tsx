@@ -188,15 +188,11 @@ function DeviceChartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function SecondaryFeatures() {
   return (
-    <section
-      id="secondary-features"
-      aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32"
-    >
+    <section id="services" className="py-20 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            Services
           </h2>
           <p className="mt-2 text-lg text-gray-600">
             With typical market returns, you have to start young to secure your
