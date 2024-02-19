@@ -1,7 +1,7 @@
 import { AppStoreLink } from '@/components/AppStoreLink'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ButtonFullWidth'
 
 export function CallToAction() {
   return (

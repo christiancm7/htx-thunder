@@ -1,17 +1,8 @@
 import { useId } from 'react'
 import Image from 'next/image'
-import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ButtonFullWidth'
 import { Container } from '@/components/Container'
-import logoBbc from '@/images/logos/bbc.svg'
-import logoCbs from '@/images/logos/cbs.svg'
-import logoCnn from '@/images/logos/cnn.svg'
-import logoFastCompany from '@/images/logos/fast-company.svg'
-import logoForbes from '@/images/logos/forbes.svg'
-import logoHuffpost from '@/images/logos/huffpost.svg'
-import logoTechcrunch from '@/images/logos/techcrunch.svg'
-import logoWired from '@/images/logos/wired.svg'
 import Dunk from '../images/dunk.png'
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   let id = useId()
