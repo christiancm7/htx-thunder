@@ -223,17 +223,16 @@ export function Pricing() {
             id="pricing-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
           >
-            Flat pricing, no management fees.
+            Rental Prices
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Whether you’re one person trying to get ahead or a big firm trying
-            to take over the world, we’ve got a plan for you.
+            Full court or half court we have something for you.
           </p>
         </div>
 
         <div className="mt-8 flex justify-center">
           <div className="relative">
-            <RadioGroup
+            {/* <RadioGroup
               value={activePeriod}
               onChange={setActivePeriod}
               className="grid grid-cols-2"
@@ -252,7 +251,7 @@ export function Pricing() {
                   {period}
                 </RadioGroup.Option>
               ))}
-            </RadioGroup>
+            </RadioGroup> */}
             <div
               aria-hidden="true"
               className={clsx(

@@ -1,10 +1,9 @@
 'use client'
 
-import { Fragment, useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import {
-  AnimatePresence,
   type MotionProps,
   type Variant,
   type Variants,
@@ -15,7 +14,6 @@ import { useDebouncedCallback } from 'use-debounce'
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
 import {
   DiageoLogo,
   LaravelLogo,
@@ -81,7 +79,7 @@ function BasketballIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     <Image
       src={basketballIcon}
       alt="camp icon"
-      height={40}
+      height={38}
       style={{
         filter: 'invert(1)',
       }}
@@ -494,9 +492,14 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
-                <feature.screen />
-              </PhoneFrame>
+              <div
+                className=" relative mx-auto w-full max-w-[366px]"
+                style={{
+                  height: 200,
+                }}
+              >
+                {/* <feature.screen /> */}
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">

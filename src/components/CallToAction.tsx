@@ -26,7 +26,7 @@ export function CallToAction() {
             <Button
               href="https://htownthundergym.ezfacility.com/"
               target="_blank"
-              className="text-md cursor-pointer rounded-lg bg-indigo-500 px-12 py-3 text-center font-semibold text-white"
+              className="text-md cursor-pointer rounded-lg bg-indigo-500 px-20 py-3 text-center font-semibold text-white"
             >
               BOOK NOW
             </Button>
