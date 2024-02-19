@@ -4,39 +4,39 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Basketball Courts',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Experience the game at its finest on our state-of-the-art basketball courts.',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Camps',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'Join our inclusive basketball camps, catering to all ages and skill levels, for a fun and transformative learning experience.',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Training Equipment',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Elevate your game with our top-notch training equipment, including cones, balls, and rebound machines.',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'Volleyball Courts',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+      'Dive into the action on our premium volleyball courts, featuring high-quality nets.',
     icon: DeviceListIcon,
   },
   {
-    name: 'Encrypted and anonymized',
+    name: 'Strength Training',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Achieve your fitness goals with our comprehensive strength training facilities.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Portfolio tracking',
+    name: 'Tournaments',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Compete and connect in our thrilling tournaments, in basketball and volleyball.',
     icon: DeviceChartIcon,
   },
 ]
@@ -195,8 +195,7 @@ export function SecondaryFeatures() {
             Services
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+            Everything Houston Thunder Gym has to offer
           </p>
         </div>
         <ul

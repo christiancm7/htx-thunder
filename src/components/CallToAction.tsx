@@ -1,6 +1,7 @@
 import { AppStoreLink } from '@/components/AppStoreLink'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
+import { Button } from '@/components/Button'
 
 export function CallToAction() {
   return (
@@ -14,15 +15,21 @@ export function CallToAction() {
       <Container className="relative">
         <div className="mx-auto max-w-md sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-white sm:text-4xl">
-            Get your first tips today
+            Rent a court today
           </h2>
           <p className="mt-4 text-lg text-gray-300">
-            It takes 30 seconds to sign up. Download the app and create an
-            account today and we’ll send you a tip guaranteed to double your
-            first investment.
+            Check out our schedule and book your basketball or volleyball court
+            in just 30 seconds. Secure the perfect spot for your next game
+            today.
           </p>
           <div className="mt-8 flex justify-center">
-            <AppStoreLink color="white" />
+            <Button
+              href="https://htownthundergym.ezfacility.com/"
+              target="_blank"
+              className="text-md cursor-pointer rounded-lg bg-indigo-500 px-12 py-3 text-center font-semibold text-white"
+            >
+              BOOK NOW
+            </Button>
           </div>
         </div>
       </Container>

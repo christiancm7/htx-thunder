@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import { useInView } from 'framer-motion'
 
 import { Container } from '@/components/Container'
-
 interface Review {
   title: string
   body: string
@@ -15,87 +14,87 @@ interface Review {
 
 const reviews: Array<Review> = [
   {
-    title: 'It really works.',
-    body: 'I downloaded Pocket today and turned $5000 into $25,000 in half an hour.',
-    author: 'CrazyInvestor',
+    title: 'Best Courts in Town!',
+    body: 'Rented a basketball court for a weekend game with friends, and the experience was top-notch. Well-maintained and great vibes!',
+    author: 'Alex Johnson',
     rating: 5,
   },
   {
-    title: 'You need this app.',
-    body: 'I didn’t understand the stock market at all before Pocket. I still don’t, but at least I’m rich now.',
-    author: 'CluelessButRich',
+    title: 'Volleyball Night Success!',
+    body: 'Our community volleyball night was a hit thanks to these fantastic courts. The nets and lighting were perfect for our evening game.',
+    author: 'Maria Gonzalez',
     rating: 5,
   },
   {
-    title: 'This shouldn’t be legal.',
-    body: 'Pocket makes it so easy to win big in the stock market that I can’t believe it’s actually legal.',
-    author: 'LivingDaDream',
+    title: 'Unbeatable Experience',
+    body: 'The quality of the courts and the friendly staff made our tournament feel like a professional event. Highly recommend!',
+    author: 'Ethan Brown',
     rating: 5,
   },
   {
-    title: 'Screw financial advisors.',
-    body: 'I barely made any money investing in mutual funds. With Pocket, I’m doubling my net-worth every single month.',
-    author: 'JordanBelfort1962',
+    title: 'Family Fun Day Sorted',
+    body: 'Booked a court for a family day out, and it couldnt have been better. The kids loved it, and the facilities were great.',
+    author: 'Jessica Taylor',
     rating: 5,
   },
   {
-    title: 'I love it!',
-    body: 'I started providing insider information myself and now I get new insider tips every 5 minutes. I don’t even have time to act on all of them. New Lamborghini is being delivered next week!',
-    author: 'MrBurns',
+    title: 'Perfect for Team Practices',
+    body: 'Our basketball team practices here regularly. The courts are always in great shape, and the booking process is a breeze.',
+    author: 'Chris Davis',
     rating: 5,
   },
   {
-    title: 'Too good to be true.',
-    body: 'I was making money so fast with Pocket that it felt like a scam. But I sold my shares and withdrew the money and it’s really there, right in my bank account. This app is crazy!',
-    author: 'LazyRich99',
+    title: 'Great for Events',
+    body: 'Organized a charity volleyball tournament here, and the feedback was amazing. The courts and equipment are top-quality.',
+    author: 'Olivia Martinez',
     rating: 5,
   },
   {
-    title: 'Wish I could give 6 stars',
-    body: 'This is literally the most important app you will ever download in your life. Get on this before it’s so popular that everyone else is getting these tips too.',
-    author: 'SarahLuvzCash',
+    title: 'Can’t Wait to Return!',
+    body: 'After playing on these courts, my friends and I can’t wait to come back. Everything from booking to playing was seamless.',
+    author: 'Michael Thompson',
     rating: 5,
   },
   {
-    title: 'Bought an island.',
-    body: 'Yeah, you read that right. Want your own island too? Get Pocket.',
-    author: 'ScroogeMcduck',
+    title: 'Professional-Level Courts',
+    body: 'The quality of the basketball courts here makes you feel like a pro. Well-marked, clean, and with great hoops.',
+    author: 'Sophia Wilson',
     rating: 5,
   },
   {
-    title: 'No more debt!',
-    body: 'After 2 weeks of trading on Pocket I was debt-free. Why did I even go to school at all when Pocket exists?',
-    author: 'BruceWayne',
+    title: 'Stress-Free Booking',
+    body: 'The app made it so easy to book a volleyball court. Quick, easy, and the court was exactly as advertised.',
+    author: 'James Anderson',
     rating: 5,
   },
   {
-    title: 'I’m 13 and I’m rich.',
-    body: 'I love that with Pocket’s transaction anonymization I could sign up and start trading when I was 12 years old. I had a million dollars before I had armpit hair!',
-    author: 'RichieRich',
+    title: 'Kids Had a Blast',
+    body: 'Rented a court for my son’s birthday, and it was a hit. Safe, fun, and the staff were incredibly helpful.',
+    author: 'Linda Rodriguez',
     rating: 5,
   },
   {
-    title: 'Started an investment firm.',
-    body: 'I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!',
-    author: 'TheCountOfMonteChristo',
+    title: 'Perfect for Corporate Events',
+    body: 'Hosted our company’s team-building event here, and it was perfect. The courts are excellent, and the atmosphere is great.',
+    author: 'Robert Martinez',
     rating: 5,
   },
   {
-    title: 'It’s like a superpower.',
-    body: 'Every tip Pocket has sent me has paid off. It’s like playing Blackjack but knowing exactly what card is coming next!',
-    author: 'ClarkKent',
+    title: 'Like Playing in the Big Leagues',
+    body: 'The attention to detail on these courts makes every game feel like you’re in the big leagues. Absolutely love it!',
+    author: 'Emily Johnson',
     rating: 5,
   },
   {
-    title: 'Quit my job.',
-    body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
-    author: 'GeorgeCostanza',
+    title: 'Highlight of Our Vacation',
+    body: 'Rented a basketball court while on vacation, and it was the highlight of our trip. Great facilities and friendly staff.',
+    author: 'David Wilson',
     rating: 5,
   },
   {
-    title: 'Don’t download this app',
-    body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-    author: 'JeffBezos',
+    title: 'All You Could Ask For',
+    body: 'These courts have everything you could ask for - great surface, nets, and even night lights for evening games.',
+    author: 'Sarah Moore',
     rating: 5,
   },
 ]
@@ -282,10 +281,10 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing their life with Pocket.
+          See what our customers think about us
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of people have doubled their net-worth in the last 30 days.
+          Our latest customer reviews
         </p>
         <ReviewGrid />
       </Container>

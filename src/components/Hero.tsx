@@ -113,7 +113,7 @@ export function Hero() {
               <Button
                 href="https://htownthundergym.ezfacility.com/"
                 target="_blank"
-                className="mt-6 cursor-pointer rounded-lg bg-indigo-500 px-10 py-3 text-center text-sm font-semibold text-white"
+                className="text-md mt-6 cursor-pointer rounded-lg bg-indigo-500 px-12 py-3 text-center font-semibold text-white"
               >
                 BOOK NOW
               </Button>

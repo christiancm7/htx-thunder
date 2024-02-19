@@ -130,13 +130,9 @@ export function Header() {
             <Button
               href="https://htownthundergym.ezfacility.com/login"
               target="_blank"
-              variant="outline"
               className="hidden lg:block"
             >
-              Log in
-            </Button>
-            <Button href="#" className="hidden lg:block">
-              Book Now
+              Login
             </Button>
           </div>
         </Container>
