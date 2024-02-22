@@ -10,32 +10,13 @@ import { Logomark } from '@/components/Logo'
 
 const plans = [
   {
-    name: 'Starter',
+    name: 'Half Court',
     featured: false,
-    price: { Monthly: '$0', Annually: '$0' },
-    description:
-      'You’re new to investing but want to do it right. Get started for free.',
+    price: 40,
+    description: 'Book our half-court for your next basketball session.',
     button: {
-      label: 'Get started for free',
-      href: '/register',
-    },
-    features: [
-      'Commission-free trading',
-      'Multi-layered encryption',
-      'One tip every day',
-      'Invest up to $1,500 each month',
-    ],
-    logomarkClassName: 'fill-gray-300',
-  },
-  {
-    name: 'Investor',
-    featured: false,
-    price: { Monthly: '$7', Annually: '$70' },
-    description:
-      'You’ve been investing for a while. Invest more and grow your wealth faster.',
-    button: {
-      label: 'Subscribe',
-      href: '/register',
+      label: 'Book',
+      href: 'https://htownthundergym.ezfacility.com/',
     },
     features: [
       'Commission-free trading',
@@ -47,14 +28,13 @@ const plans = [
     logomarkClassName: 'fill-gray-500',
   },
   {
-    name: 'VIP',
+    name: 'Full Court',
     featured: true,
-    price: { Monthly: '$199', Annually: '$1,990' },
-    description:
-      'You’ve got a huge amount of assets but it’s not enough. To the moon.',
+    price: 70,
+    description: 'Secure our full court for your next big game.',
     button: {
-      label: 'Subscribe',
-      href: '/register',
+      label: 'Book',
+      href: 'https://htownthundergym.ezfacility.com/',
     },
     features: [
       'Commission-free trading',
@@ -95,22 +75,17 @@ function Plan({
   description,
   button,
   features,
-  activePeriod,
   logomarkClassName,
   featured = false,
 }: {
   name: string
-  price: {
-    Monthly: string
-    Annually: string
-  }
+  price: number
   description: string
   button: {
     label: string
     href: string
   }
   features: Array<string>
-  activePeriod: 'Monthly' | 'Annually'
   logomarkClassName?: string
   featured?: boolean
 }) {
@@ -136,29 +111,10 @@ function Plan({
           featured ? 'text-white' : 'text-gray-900',
         )}
       >
-        {price.Monthly === price.Annually ? (
-          price.Monthly
-        ) : (
+        {price && (
           <>
-            <span
-              aria-hidden={activePeriod === 'Annually'}
-              className={clsx(
-                'transition duration-300',
-                activePeriod === 'Annually' &&
-                  'pointer-events-none translate-x-6 select-none opacity-0',
-              )}
-            >
-              {price.Monthly}
-            </span>
-            <span
-              aria-hidden={activePeriod === 'Monthly'}
-              className={clsx(
-                'absolute left-0 top-0 transition duration-300',
-                activePeriod === 'Monthly' &&
-                  'pointer-events-none -translate-x-6 select-none opacity-0',
-              )}
-            >
-              {price.Annually}
+            <span className={clsx('pointer-events-none ml-1 select-none')}>
+              {`$${price}`}
             </span>
           </>
         )}
@@ -207,10 +163,6 @@ function Plan({
 }
 
 export function Pricing() {
-  let [activePeriod, setActivePeriod] = useState<'Monthly' | 'Annually'>(
-    'Monthly',
-  )
-
   return (
     <section
       id="pricing"
@@ -230,55 +182,9 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="relative">
-            {/* <RadioGroup
-              value={activePeriod}
-              onChange={setActivePeriod}
-              className="grid grid-cols-2"
-            >
-              {['Monthly', 'Annually'].map((period) => (
-                <RadioGroup.Option
-                  key={period}
-                  value={period}
-                  className={clsx(
-                    'cursor-pointer border border-gray-300 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.2)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
-                    period === 'Monthly'
-                      ? 'rounded-l-lg'
-                      : '-ml-px rounded-r-lg',
-                  )}
-                >
-                  {period}
-                </RadioGroup.Option>
-              ))}
-            </RadioGroup> */}
-            <div
-              aria-hidden="true"
-              className={clsx(
-                'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-cyan-500 transition-all duration-300',
-                activePeriod === 'Monthly'
-                  ? '[clip-path:inset(0_50%_0_0)]'
-                  : '[clip-path:inset(0_0_0_calc(50%-1px))]',
-              )}
-            >
-              {['Monthly', 'Annually'].map((period) => (
-                <div
-                  key={period}
-                  className={clsx(
-                    'py-2 text-center text-sm font-semibold text-white',
-                    period === 'Annually' && '-ml-px',
-                  )}
-                >
-                  {period}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-2">
           {plans.map((plan) => (
-            <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
+            <Plan key={plan.name} {...plan} />
           ))}
         </div>
       </Container>

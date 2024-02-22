@@ -554,7 +554,7 @@ export function PrimaryFeatures() {
           <h2
             className="text-center text-4xl font-medium tracking-tight text-white"
             style={{
-              textShadow: 'black 0.5px 0.5px 0.5px;',
+              textShadow: 'black 0.5px 0.5px 0.5px',
             }}
           >
             HT Training Facility
