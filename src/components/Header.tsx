@@ -54,8 +54,8 @@ export function Header() {
   return (
     <header>
       <nav>
-        <Container className="relative z-50 flex justify-between">
-          <div className="relative z-10 flex items-center gap-16">
+        <Container className="relative z-50 flex justify-between px-0">
+          <div className="relative z-10 -ml-6 flex items-center gap-16">
             <Link href="/" aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
