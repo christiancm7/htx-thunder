@@ -1,9 +1,11 @@
 import { useId } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/ButtonFullWidth'
 import { Container } from '@/components/Container'
 import Dunk from '../images/dunk.png'
+
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   let id = useId()
 
@@ -88,36 +90,83 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Hero() {
   return (
-    <div className="overflow-hidden py-0 sm:py-32 lg:pb-32 xl:pb-36">
-      <Container>
-        <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
-          <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              Ready to book a court?
-            </h1>
-            <p className="mt-6 text-lg text-gray-600">
-              Basketball Court rentals are available in full and half-court.
-              Volleyball nets and volleyball net setup is included in the court
-              rental fee. Please notify us if needing a net 24 hours prior.
-            </p>
-            <div className="flex items-center justify-center py-10">
-              <Button
-                href="https://htownthundergym.ezfacility.com/"
-                target="_blank"
-                className="text-md mt-6 cursor-pointer rounded-lg bg-indigo-500 px-20 py-3 text-center font-semibold text-white"
-              >
-                BOOK NOW
-              </Button>
-            </div>
+    <div className="relative isolate overflow-hidden bg-white">
+      <svg
+        className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+            width={200}
+            height={200}
+            x="50%"
+            y={-1}
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M100 200V.5M.5 .5H200" fill="none" />
+          </pattern>
+        </defs>
+        <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+          <path
+            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+            strokeWidth={0}
+          />
+        </svg>
+        <rect
+          width="100%"
+          height="100%"
+          strokeWidth={0}
+          fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+        />
+      </svg>
+      <div className="mx-auto max-w-7xl px-6 pb-12 pt-8 sm:pb-16 lg:flex lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-4">
+          <div className="mt-10 sm:mt-14 lg:mt-6">
+            <Link href="/register" className="inline-flex space-x-6">
+              <span className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10">
+                Now Enrolling
+              </span>
+              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
+                <span>Join our elite training programs</span>
+              </span>
+            </Link>
           </div>
-          <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
-            <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
-            <div className="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
-              <Image src={Dunk} alt="dunk" />
-            </div>
+          <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            Elevate Your Game at New Wave Academy
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Houston&apos;s premier basketball training facility offering elite
+            development programs, camps, and personalized coaching for players
+            of all ages and skill levels.
+          </p>
+          <div className="mt-10 flex items-center gap-x-6">
+            <Link
+              href="/register"
+              className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              Register Now
+            </Link>
+            <Link
+              href="/programs"
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              View Programs <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
-      </Container>
+        <div className="mx-auto mt-12 flex max-w-2xl sm:mt-16 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+            <Image
+              src="/court.webp"
+              alt="New Wave Academy basketball court"
+              width={2432}
+              height={1442}
+              className="h-auto max-h-[30rem] w-[55rem] rounded-md bg-white/5 object-cover shadow-2xl ring-1 ring-white/10"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
