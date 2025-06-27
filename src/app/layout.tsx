@@ -1,4 +1,4 @@
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins, Outfit } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
@@ -11,10 +11,17 @@ const inter = Inter({
 })
 
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
+})
+
+const outfit = Outfit({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
 })
 
 export const metadata: Metadata = {
@@ -35,12 +42,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={clsx(
-        'h-full bg-white antialiased',
+        'h-full scroll-smooth bg-gray-50 antialiased',
         inter.variable,
         poppins.variable,
+        outfit.variable,
       )}
     >
-      <body className="flex h-full flex-col">
+      <body className="flex h-full flex-col font-sans">
         <div className="flex min-h-full flex-col">{children}</div>
       </body>
     </html>

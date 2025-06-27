@@ -22,11 +22,11 @@ function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function ChevronUpIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function XMarkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
       <path
-        d="M17 14l-5-5-5 5"
+        d="M6 18L18 6M6 6l12 12"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -44,7 +44,7 @@ function MobileNavLink(
   return (
     <Popover.Button
       as={Link}
-      className="block text-base leading-7 tracking-tight text-gray-700"
+      className="hover:text-primary-600 block text-lg font-medium leading-7 tracking-tight text-gray-700 transition-colors"
       {...props}
     />
   )
@@ -52,9 +52,9 @@ function MobileNavLink(
 
 export function Header() {
   return (
-    <header>
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md">
       <nav>
-        <Container className="relative z-50 flex justify-between px-0">
+        <Container className="relative flex justify-between px-0 py-4">
           <div className="relative z-10 -ml-6 flex items-center gap-16">
             <Link href="/" aria-label="Home">
               <Logo className="h-10 w-auto" />
@@ -63,21 +63,19 @@ export function Header() {
               <NavLinks />
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <Popover className="lg:hidden">
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
+                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 transition-colors hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
                     aria-label="Toggle site navigation"
                   >
-                    {({ open }) =>
-                      open ? (
-                        <ChevronUpIcon className="h-6 w-6" />
-                      ) : (
-                        <MenuIcon className="h-6 w-6" />
-                      )
-                    }
+                    {open ? (
+                      <XMarkIcon className="h-6 w-6" />
+                    ) : (
+                      <MenuIcon className="h-6 w-6" />
+                    )}
                   </Popover.Button>
                   <AnimatePresence initial={false}>
                     {open && (
@@ -88,7 +86,7 @@ export function Header() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="fixed inset-0 z-0 bg-gray-300/60 backdrop-blur"
+                          className="fixed inset-0 z-0 bg-gray-900/20 backdrop-blur-sm"
                         />
                         <Popover.Panel
                           static
@@ -100,9 +98,9 @@ export function Header() {
                             y: -32,
                             transition: { duration: 0.2 },
                           }}
-                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-12 pb-6 pt-44 shadow-2xl shadow-gray-900/20"
+                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-3xl border border-gray-100 bg-white px-8 pb-8 pt-20 shadow-2xl shadow-gray-900/10"
                         >
-                          <div className="space-y-4">
+                          <div className="space-y-6">
                             <MobileNavLink href="/">Home</MobileNavLink>
                             <MobileNavLink href="/about">About</MobileNavLink>
                             <MobileNavLink href="/programs">
@@ -111,18 +109,23 @@ export function Header() {
                             <MobileNavLink href="/facilities">
                               Facilities
                             </MobileNavLink>
-                            <MobileNavLink href="/admissions">
-                              Admissions
-                            </MobileNavLink>
                             <MobileNavLink href="/contact">
                               Contact
                             </MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            {/* <Button href="/login" variant="outline">
-                              Log in
-                            </Button>
-                            <Button href="#">Download the app</Button> */}
+                            <Link
+                              href="/register"
+                              className="btn-primary w-full justify-center"
+                            >
+                              Register Now
+                            </Link>
+                            <Link
+                              href="/contact"
+                              className="btn-secondary w-full justify-center"
+                            >
+                              Contact Us
+                            </Link>
                           </div>
                         </Popover.Panel>
                       </>
@@ -131,13 +134,19 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button
-              href="https://htownthundergym.ezfacility.com/login"
-              target="_blank"
-              className="hidden lg:block"
-            >
-              Login
-            </Button>
+
+            {/* Desktop Action Buttons */}
+            <div className="hidden lg:flex lg:items-center lg:gap-4">
+              <Link
+                href="/contact"
+                className="hover:text-primary-600 font-medium text-gray-700 transition-colors"
+              >
+                Contact
+              </Link>
+              <Link href="/register" className="btn-primary">
+                Register Now
+              </Link>
+            </div>
           </div>
         </Container>
       </nav>

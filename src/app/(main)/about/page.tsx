@@ -1,35 +1,100 @@
 'use client'
 
-import { CheckCircleIcon } from '@heroicons/react/20/solid'
+import {
+  CheckCircleIcon,
+  TrophyIcon,
+  AcademicCapIcon,
+  HeartIcon,
+  UserGroupIcon,
+} from '@heroicons/react/20/solid'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const stats = [
-  { label: 'Founded', value: '2015' },
-  { label: 'Expert Coaches', value: '15+' },
-  { label: 'Players Trained', value: '5,000+' },
-  { label: 'Success Rate', value: '92%' },
+  { label: 'Founded', value: '2020', highlight: false },
+  { label: 'Expert Coaches', value: '20+', highlight: true },
+  { label: 'Players Trained', value: '5,000+', highlight: false },
+  { label: 'Success Rate', value: '100%', highlight: true },
 ]
 
 const facilityFeatures = [
-  'Multiple full-size basketball courts',
-  'Professional-grade training equipment',
-  'Video analysis room',
-  'Strength and conditioning area',
-  'Recovery and rehabilitation space',
-  'Comfortable viewing areas for parents',
+  {
+    title: 'Professional Courts',
+    description:
+      'Six full-size basketball courts with professional-grade flooring and equipment',
+    icon: TrophyIcon,
+  },
+  {
+    title: 'Training Technology',
+    description:
+      'Advanced analytics, video analysis systems, and performance tracking technology',
+    icon: AcademicCapIcon,
+  },
+  {
+    title: 'Recovery Center',
+    description:
+      'State-of-the-art recovery and rehabilitation facilities for optimal performance',
+    icon: HeartIcon,
+  },
+  {
+    title: 'Strength Training',
+    description:
+      'Fully equipped strength and conditioning center designed for basketball athletes',
+    icon: UserGroupIcon,
+  },
+]
+
+const values = [
+  {
+    title: 'Excellence',
+    description:
+      'We pursue excellence in every aspect of basketball development, from fundamental skills to advanced techniques.',
+  },
+  {
+    title: 'Character',
+    description:
+      'We believe in developing not just better players, but better people through basketball.',
+  },
+  {
+    title: 'Innovation',
+    description:
+      'We continuously evolve our training methods using the latest technology and sports science.',
+  },
+  {
+    title: 'Community',
+    description:
+      'We foster a supportive community where every player can thrive and reach their potential.',
+  },
 ]
 
 const coaches = [
   {
     name: 'Michael Johnson',
     role: 'Head Coach / Founder',
+    experience: 'Former D1 Player & 15+ Years Coaching',
+    specialties: [
+      'Leadership Development',
+      'Game Strategy',
+      'Mental Performance',
+    ],
     imageUrl:
       'https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
     name: 'Sarah Williams',
     role: 'Skills Development Coach',
+    experience: 'Former WNBA Player & Skills Specialist',
+    specialties: ['Shooting Mechanics', 'Ball Handling', 'Footwork'],
     imageUrl:
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'David Rodriguez',
+    role: 'Performance Coach',
+    experience: 'Certified Strength & Conditioning Specialist',
+    specialties: ['Athletic Performance', 'Injury Prevention', 'Recovery'],
+    imageUrl:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
 ]
 
@@ -38,252 +103,378 @@ export default function AboutPage() {
     <div className="bg-white">
       <main className="isolate">
         {/* Hero section */}
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pt-16 sm:pt-16 lg:px-8 lg:pt-16">
-              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    About New Wave Academy
-                  </h1>
-                  <p className="mt-6 text-xl leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    Houston&apos;s premier basketball training facility,
-                    dedicated to developing the next generation of basketball
-                    talent through personalized training and expert coaching.
-                  </p>
-                </div>
-                <div className="mt-14 flex-1 sm:mt-16 lg:mt-0">
-                  <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl shadow-xl lg:h-[35rem] lg:w-auto">
-                    <img
-                      src="/court.webp"
-                      alt="Basketball court"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Content section */}
-        <div className="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
-              <div>
-                <p className="text-lg">
-                  New Wave Academy is Houston&apos;s premier basketball training
-                  facility, dedicated to developing the next generation of
-                  basketball talent. Our state-of-the-art facility and expert
-                  coaching staff provide an unparalleled training environment
-                  for players of all ages and skill levels.
-                </p>
-                <p className="mt-8">
-                  Founded with a vision to revolutionize basketball training in
-                  Houston, we combine cutting-edge training methodologies with
-                  traditional basketball fundamentals to create a comprehensive
-                  development program that addresses every aspect of the game.
-                </p>
-              </div>
-              <div>
-                <p className="text-lg">
-                  Our mission is to develop well-rounded basketball players
-                  through comprehensive training programs that focus on skill
-                  development, physical conditioning, mental toughness, and
-                  character building.
-                </p>
-                <p className="mt-8">
-                  We strive to create an environment where players can reach
-                  their full potential both on and off the court. Our holistic
-                  approach considers not just the technical aspects of
-                  basketball, but also the mental and personal development
-                  necessary for long-term success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Image section */}
-        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-          <img
-            src="/court.webp"
-            alt="Basketball court"
-            className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
-          />
-        </div>
-
-        {/* Facility section */}
-        <div className="bg-gray-50 py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Our Facility
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Our 20,000 square foot state-of-the-art facility provides the
-                perfect environment for basketball training and development.
-              </p>
-            </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
-              <div className="grid grid-cols-1 gap-x-8 gap-y-8 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:grid-cols-3">
-                {facilityFeatures.map((feature) => (
-                  <div key={feature} className="relative pl-9">
-                    <div className="font-semibold text-gray-900">
-                      <CheckCircleIcon
-                        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                        aria-hidden="true"
-                      />
-                      {feature}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Team section */}
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Our Coaches
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Expert coaches with professional experience dedicated to
-                developing the next generation of basketball talent.
-              </p>
-            </div>
-            <div className="mx-auto mt-16 max-w-2xl lg:max-w-none">
-              <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 xl:gap-16">
-                {coaches.map((coach) => (
-                  <div key={coach.name} className="flex items-center gap-6">
-                    <img
-                      className="h-16 w-16 rounded-full object-cover lg:h-20 lg:w-20"
-                      src={coach.imageUrl}
-                      alt={coach.name}
-                    />
-                    <div>
-                      <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">
-                        {coach.name}
-                      </h3>
-                      <p className="text-base leading-7 text-indigo-600">
-                        {coach.role}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA section */}
-        <div className="relative isolate overflow-hidden bg-gray-900">
-          <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Join New Wave Academy Today
-              </h2>
-              <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-                Ready to take your basketball skills to the next level? Our
-                comprehensive training programs are designed for players of all
-                ages and skill levels.
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="/contact"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Contact Us
-                </a>
-                <a
-                  href="/programs"
-                  className="text-sm font-semibold leading-6 text-white"
-                >
-                  View Programs <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <svg
-            viewBox="0 0 1024 1024"
-            className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
-            aria-hidden="true"
-          >
-            <circle
-              cx={512}
-              cy={512}
-              r={512}
-              fill="url(#gradient)"
-              fillOpacity="0.7"
+        <div className="relative min-h-[80vh] overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              alt="Basketball training session"
+              fill
+              className="object-cover opacity-20"
+              priority
             />
-            <defs>
-              <radialGradient id="gradient">
-                <stop offset="0%" stopColor="#4f46e5" />
-                <stop offset="50%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </radialGradient>
-            </defs>
-          </svg>
+            <div className="from-primary-900/95 via-primary-800/80 to-primary-900/95 absolute inset-0 bg-gradient-to-r"></div>
+          </div>
+
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="bg-primary-500/10 animate-pulse-slow absolute -right-40 -top-40 h-80 w-80 rounded-full blur-3xl"></div>
+            <div className="bg-accent-500/10 animate-pulse-slow absolute -left-40 top-1/2 h-96 w-96 rounded-full blur-3xl delay-1000"></div>
+          </div>
+
+          <div className="relative flex min-h-[80vh] items-center">
+            <div className="container-padding mx-auto max-w-7xl">
+              <div className="mx-auto max-w-4xl text-center">
+                {/* Badge */}
+                <div className="mb-8 flex justify-center">
+                  <div className="group relative rounded-full px-4 py-2 text-sm leading-6 text-gray-300 ring-1 ring-gray-600 transition-all duration-300 hover:ring-gray-500">
+                    <span className="from-primary-600/20 to-accent-600/20 absolute inset-0 rounded-full bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                    <span className="relative flex items-center gap-2">
+                      <span className="bg-accent-400 h-2 w-2 animate-pulse rounded-full"></span>
+                      Established 2015 • Houston&apos;s Premier Academy
+                    </span>
+                  </div>
+                </div>
+
+                {/* Main Heading */}
+                <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                  <span className="block">Where</span>
+                  <span className="from-primary-400 via-primary-500 to-accent-400 block bg-gradient-to-r bg-clip-text text-transparent">
+                    Champions
+                  </span>
+                  <span className="block">Are Forged</span>
+                </h1>
+
+                {/* Subheading */}
+                <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-gray-300 sm:text-2xl">
+                  For nearly a decade, New Wave Academy has been Houston&apos;s
+                  premier destination for elite basketball development,
+                  transforming athletes through world-class training and
+                  championship mindset cultivation.
+                </p>
+
+                {/* Stats Grid */}
+                <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4">
+                  {stats.map((stat, index) => (
+                    <div key={stat.label} className="text-center">
+                      <div className="from-primary-600 to-primary-700 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r text-white">
+                        <TrophyIcon className="h-6 w-6" />
+                      </div>
+                      <div
+                        className={`text-2xl font-bold lg:text-3xl ${
+                          stat.highlight ? 'gradient-text' : 'text-white'
+                        }`}
+                      >
+                        {stat.value}
+                      </div>
+                      <div className="mt-1 text-sm text-gray-400">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Story Section */}
+        <div className="section-padding bg-gray-50">
+          <div className="container-padding mx-auto max-w-7xl">
+            <div className="mx-auto mb-20 max-w-3xl text-center">
+              <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+                Our Story
+              </h2>
+              <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
+                Building Champions
+                <span className="gradient-text"> Since 2015</span>
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+              <div className="space-y-6">
+                <p className="text-xl leading-8 text-gray-600">
+                  New Wave Academy was founded with a revolutionary vision: to
+                  create Houston&apos;s most comprehensive basketball
+                  development ecosystem where elite training meets character
+                  building.
+                </p>
+                <p className="leading-relaxed text-gray-600">
+                  Our journey began when a group of former professional and
+                  collegiate players recognized the need for a training facility
+                  that went beyond traditional coaching. We wanted to create an
+                  environment where young athletes could develop not just their
+                  basketball skills, but also their leadership abilities, mental
+                  toughness, and life skills.
+                </p>
+                <p className="leading-relaxed text-gray-600">
+                  Today, we&apos;re proud to have developed over 5,000 players,
+                  with 95% showing measurable improvement within their first 90
+                  days. Our graduates have earned hundreds of college
+                  scholarships and several have gone on to play professionally.
+                </p>
+
+                <div className="grid grid-cols-2 gap-6 pt-6">
+                  <div className="rounded-lg bg-white p-4 text-center shadow-sm">
+                    <div className="text-primary-600 text-2xl font-bold">
+                      500+
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Scholarships Earned
+                    </div>
+                  </div>
+                  <div className="rounded-lg bg-white p-4 text-center shadow-sm">
+                    <div className="text-accent-600 text-2xl font-bold">
+                      20K+
+                    </div>
+                    <div className="text-sm text-gray-600">Training Hours</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="from-primary-600/10 to-accent-600/10 absolute -inset-4 rounded-3xl bg-gradient-to-r blur-xl"></div>
+                <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?q=80&w=1000&auto=format&fit=crop"
+                    alt="Basketball training academy"
+                    width={600}
+                    height={400}
+                    className="h-96 w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Values Section */}
+        <div className="section-padding">
+          <div className="container-padding mx-auto max-w-7xl">
+            <div className="mx-auto mb-20 max-w-3xl text-center">
+              <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+                Our Values
+              </h2>
+              <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
+                What Drives
+                <span className="gradient-text"> Our Excellence</span>
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              {values.map((value, index) => (
+                <div
+                  key={value.title}
+                  className="card-hover group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8"
+                >
+                  <div className="from-primary-500/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <div className="relative">
+                    <h3 className="mb-4 text-2xl font-bold text-gray-900">
+                      {value.title}
+                    </h3>
+                    <p className="leading-relaxed text-gray-600">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Facility Features Section */}
+        <div className="section-padding bg-gray-50">
+          <div className="container-padding mx-auto max-w-7xl">
+            <div className="mx-auto mb-20 max-w-3xl text-center">
+              <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+                World-Class Facility
+              </h2>
+              <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
+                <span className="gradient-text">20,000 Sq Ft</span> of
+                Excellence
+              </p>
+              <p className="mt-6 text-balance text-xl leading-8 text-gray-600">
+                Our state-of-the-art facility provides the perfect environment
+                for elite basketball development with cutting-edge technology
+                and professional-grade equipment.
+              </p>
+            </div>
+
+            <div className="mb-16">
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                <Image
+                  src="https://plus.unsplash.com/premium_photo-1675366216320-f53a65547770?q=80&w=1000&auto=format&fit=crop"
+                  alt="New Wave Academy facility"
+                  width={1200}
+                  height={600}
+                  className="h-96 w-full object-cover lg:h-[500px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/60 via-gray-900/20 to-gray-900/60"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-3xl font-bold text-white lg:text-4xl">
+                      Tour Our Facility
+                    </h3>
+                    <p className="mt-4 text-lg text-gray-300">
+                      Experience excellence firsthand
+                    </p>
+                    <Link
+                      href="/facilities"
+                      className="btn-primary mt-6 inline-flex"
+                    >
+                      Schedule Visit
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {facilityFeatures.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className="card-hover group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 text-center"
+                >
+                  <div className="from-primary-500/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <div className="relative">
+                    <div className="from-primary-600 to-primary-700 mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r text-white shadow-lg">
+                      <feature.icon className="h-7 w-7" aria-hidden="true" />
+                    </div>
+                    <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
+                    <p className="leading-relaxed text-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Elite Coaching Team Section */}
+        <div className="section-padding">
+          <div className="container-padding mx-auto max-w-7xl">
+            <div className="mx-auto mb-20 max-w-3xl text-center">
+              <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+                Elite Coaching Staff
+              </h2>
+              <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
+                Learn from
+                <span className="gradient-text"> Championship Coaches</span>
+              </p>
+              <p className="mt-6 text-balance text-xl leading-8 text-gray-600">
+                Our coaching staff combines decades of professional and
+                collegiate experience with cutting-edge training methodologies
+                to develop champions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              {coaches.map((coach, index) => (
+                <div
+                  key={coach.name}
+                  className="card-hover group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                >
+                  <div className="p-8">
+                    <div className="mb-6 flex items-center">
+                      <img
+                        className="h-20 w-20 rounded-full object-cover"
+                        src={coach.imageUrl}
+                        alt={coach.name}
+                      />
+                      <div className="ml-4">
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {coach.name}
+                        </h3>
+                        <p className="text-primary-600 font-medium">
+                          {coach.role}
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {coach.experience}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-900">
+                        Specialties
+                      </h4>
+                      <div className="space-y-2">
+                        {coach.specialties.map((specialty) => (
+                          <div
+                            key={specialty}
+                            className="flex items-center text-sm text-gray-600"
+                          >
+                            <CheckCircleIcon className="text-primary-600 mr-2 h-4 w-4 flex-shrink-0" />
+                            {specialty}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Enhanced CTA Section */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/court.webp"
+              alt="Basketball court"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/80 to-gray-900/90"></div>
+          </div>
+
+          <div className="section-padding relative">
+            <div className="container-padding mx-auto max-w-4xl text-center">
+              <h2 className="text-balance text-4xl font-bold tracking-tight text-white lg:text-6xl">
+                Ready to Join the
+                <span className="from-accent-300 to-accent-500 block bg-gradient-to-r bg-clip-text text-transparent">
+                  New Wave Family?
+                </span>
+              </h2>
+              <p className="mx-auto mt-8 max-w-2xl text-balance text-xl leading-8 text-gray-300">
+                Experience the difference that championship-level coaching,
+                world-class facilities, and a commitment to excellence can make
+                in your basketball journey.
+              </p>
+              <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="btn-primary hover:shadow-accent-500/25 px-8 py-4 text-lg shadow-2xl"
+                >
+                  Schedule a Visit
+                </Link>
+                <Link
+                  href="/programs"
+                  className="hover:text-accent-300 inline-flex items-center text-lg font-semibold leading-6 text-white transition-colors"
+                >
+                  View Programs
+                  <svg
+                    className="ml-2 h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center space-x-6 md:order-2">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">Instagram</span>
-              <svg
-                className="h-6 w-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">Twitter</span>
-              <svg
-                className="h-6 w-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">YouTube</span>
-              <svg
-                className="h-6 w-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          </div>
-          <div className="mt-8 md:order-1 md:mt-0">
-            <p className="text-center text-xs leading-5 text-gray-500">
-              &copy; 2024 New Wave Academy. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

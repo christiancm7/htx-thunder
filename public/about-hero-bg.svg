@@ -1,0 +1,101 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0.9"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="courtGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#374151;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:0.9"/>
+    </linearGradient>
+    
+    <!-- Basketball court pattern -->
+    <pattern id="courtPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#374151" stroke-width="0.5" opacity="0.3"/>
+      <line x1="50" y1="0" x2="50" y2="100" stroke="#374151" stroke-width="0.5" opacity="0.2"/>
+      <line x1="0" y1="50" x2="100" y2="50" stroke="#374151" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#courtGradient)"/>
+  
+  <!-- Court pattern overlay -->
+  <rect width="100%" height="100%" fill="url(#courtPattern)" opacity="0.4"/>
+  
+  <!-- Geometric shapes for depth -->
+  <polygon points="0,0 400,0 300,200 0,150" fill="url(#primaryGradient)" opacity="0.3"/>
+  <polygon points="1200,0 1200,250 800,300 900,0" fill="url(#accentGradient)" opacity="0.2"/>
+  <polygon points="0,800 200,800 150,600 0,650" fill="url(#primaryGradient)" opacity="0.25"/>
+  <polygon points="1200,800 1000,800 1100,600 1200,550" fill="url(#accentGradient)" opacity="0.3"/>
+  
+  <!-- Basketball court elements -->
+  <!-- Center court circle -->
+  <circle cx="600" cy="400" r="120" fill="none" stroke="url(#primaryGradient)" stroke-width="3" opacity="0.6"/>
+  <circle cx="600" cy="400" r="60" fill="none" stroke="url(#accentGradient)" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Basketball hoop silhouettes -->
+  <g transform="translate(150, 200)" opacity="0.4">
+    <rect x="0" y="0" width="8" height="120" fill="url(#primaryGradient)"/>
+    <ellipse cx="4" cy="0" rx="25" ry="8" fill="url(#accentGradient)"/>
+    <path d="M -20 0 Q -20 15 4 15 Q 28 15 28 0" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(1040, 180)" opacity="0.4">
+    <rect x="0" y="0" width="8" height="120" fill="url(#primaryGradient)"/>
+    <ellipse cx="4" cy="0" rx="25" ry="8" fill="url(#accentGradient)"/>
+    <path d="M -20 0 Q -20 15 4 15 Q 28 15 28 0" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
+  </g>
+  
+  <!-- Abstract basketball elements -->
+  <g transform="translate(300, 500)" opacity="0.3">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="url(#accentGradient)" stroke-width="3"/>
+    <path d="M -40 0 Q 0 -20 40 0" stroke="url(#accentGradient)" stroke-width="2" fill="none"/>
+    <path d="M -40 0 Q 0 20 40 0" stroke="url(#accentGradient)" stroke-width="2" fill="none"/>
+    <path d="M 0 -40 Q 20 0 0 40" stroke="url(#accentGradient)" stroke-width="2" fill="none"/>
+    <path d="M 0 -40 Q -20 0 0 40" stroke="url(#accentGradient)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(900, 600)" opacity="0.3">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="url(#primaryGradient)" stroke-width="2"/>
+    <path d="M -30 0 Q 0 -15 30 0" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M -30 0 Q 0 15 30 0" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 0 -30 Q 15 0 0 30" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 0 -30 Q -15 0 0 30" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Floating geometric elements -->
+  <g opacity="0.2">
+    <polygon points="100,300 140,280 160,320 120,340" fill="url(#primaryGradient)"/>
+    <polygon points="1000,450 1040,430 1060,470 1020,490" fill="url(#accentGradient)"/>
+    <polygon points="200,650 230,640 240,670 210,680" fill="url(#primaryGradient)"/>
+    <polygon points="950,150 980,140 990,170 960,180" fill="url(#accentGradient)"/>
+  </g>
+  
+  <!-- Subtle grid lines for modern tech feel -->
+  <g opacity="0.1">
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="url(#primaryGradient)" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="url(#primaryGradient)" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1200" y2="600" stroke="url(#primaryGradient)" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="800" stroke="url(#accentGradient)" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="800" stroke="url(#accentGradient)" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="800" stroke="url(#accentGradient)" stroke-width="1"/>
+  </g>
+  
+  <!-- Championship elements -->
+  <g transform="translate(500, 150)" opacity="0.3">
+    <polygon points="0,-20 6,-6 20,-6 10,2 15,16 0,8 -15,16 -10,2 -20,-6 -6,-6" fill="url(#accentGradient)"/>
+  </g>
+  
+  <g transform="translate(700, 650)" opacity="0.3">
+    <polygon points="0,-15 4.5,-4.5 15,-4.5 7.5,1.5 11.25,12 0,6 -11.25,12 -7.5,1.5 -15,-4.5 -4.5,-4.5" fill="url(#primaryGradient)"/>
+  </g>
+</svg> 

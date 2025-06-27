@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ButtonFullWidth'
 import { Container } from '@/components/Container'
-import Dunk from '../images/dunk.png'
 
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   let id = useId()
@@ -36,8 +35,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#0ea5e9" />
+            <stop offset="1" stopColor="#0ea5e9" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -66,8 +65,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#0ea5e9" />
+            <stop offset="1" stopColor="#0ea5e9" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -75,96 +74,222 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
   )
 }
 
-function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="11.5" stroke="#D4D4D4" />
-      <path
-        d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
-        fill="#A3A3A3"
-        stroke="#A3A3A3"
-      />
-    </svg>
-  )
-}
-
 export function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-white">
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
-            width={200}
-            height={200}
-            x="50%"
-            y={-1}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M100 200V.5M.5 .5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-          <path
-            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth={0}
-          fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/court.webp"
+          alt="New Wave Academy basketball court"
+          fill
+          className="object-cover opacity-20"
+          priority
         />
-      </svg>
-      <div className="mx-auto max-w-7xl px-6 pb-12 pt-8 sm:pb-16 lg:flex lg:px-8 lg:py-16">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-4">
-          <div className="mt-10 sm:mt-14 lg:mt-6">
-            <Link href="/register" className="inline-flex space-x-6">
-              <span className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10">
-                Now Enrolling
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/95"></div>
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="bg-primary-500/10 animate-pulse-slow absolute -right-40 -top-40 h-80 w-80 rounded-full blur-3xl"></div>
+        <div className="bg-accent-500/10 animate-pulse-slow absolute -left-40 top-1/2 h-96 w-96 rounded-full blur-3xl delay-1000"></div>
+        <div className="bg-primary-600/10 animate-pulse-slow delay-2000 absolute -bottom-40 right-1/3 h-64 w-64 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="grid"
+              width="60"
+              height="60"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 60 0 L 0 0 0 60"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div className="relative flex min-h-screen items-center">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+            {/* Badge */}
+            <div className="flex">
+              <div className="group relative rounded-full px-4 py-2 text-sm leading-6 text-gray-300 ring-1 ring-gray-600 transition-all duration-300 hover:ring-gray-500">
+                <span className="from-primary-600/20 to-accent-600/20 absolute inset-0 rounded-full bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                <span className="relative flex items-center gap-2">
+                  <span className="bg-accent-400 h-2 w-2 animate-pulse rounded-full"></span>
+                  Now Enrolling for 2024 Programs
+                  <svg
+                    className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="mt-10 max-w-lg text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
+              <span className="from-primary-400 via-primary-500 to-accent-400 font-heading block bg-gradient-to-r bg-clip-text text-transparent">
+                New.Wave
               </span>
-              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-                <span>Join our elite training programs</span>
-              </span>
-            </Link>
+              <span className="font-heading block">Academy</span>
+            </h1>
+
+            {/* Subheading */}
+            <p className="mt-8 text-xl leading-8 text-gray-300 sm:text-2xl lg:max-w-xl">
+              Houston&apos;s premier basketball academy where champions are
+              forged through elite training, cutting-edge technology, and
+              unwavering dedication to excellence.
+            </p>
+
+            {/* Features List */}
+            <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <div className="bg-primary-500 h-2 w-2 rounded-full"></div>
+                Professional Coaches
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="bg-accent-500 h-2 w-2 rounded-full"></div>
+                Championship Facilities
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="bg-primary-500 h-2 w-2 rounded-full"></div>
+                Proven Results
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
+              <Link
+                href="/register"
+                className="from-primary-600 to-primary-700 hover:shadow-primary-500/25 focus:ring-primary-500 group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r px-8 py-4 text-lg font-semibold text-white shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
+              >
+                <span className="from-primary-700 to-primary-800 absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                <span className="relative flex items-center gap-2">
+                  Start Your Journey
+                  <svg
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </span>
+              </Link>
+
+              <Link
+                href="/programs"
+                className="hover:border-primary-500 hover:bg-primary-500/10 focus:ring-primary-500 group inline-flex items-center justify-center rounded-lg border-2 border-gray-600 bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
+              >
+                <span className="flex items-center gap-2">
+                  View Programs
+                  <svg
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+
+            {/* Social Proof */}
+            <div className="mt-16 border-t border-gray-700 pt-8">
+              <p className="mb-4 text-sm font-medium text-gray-400">
+                Trusted by Elite Athletes
+              </p>
+              <div className="flex items-center gap-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">500+</div>
+                  <div className="text-xs text-gray-400">
+                    Scholarships Earned
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">95%</div>
+                  <div className="text-xs text-gray-400">Improvement Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">20+</div>
+                  <div className="text-xs text-gray-400">Pro Coaches</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Elevate Your Game at New Wave Academy
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Houston&apos;s premier basketball training facility offering elite
-            development programs, camps, and personalized coaching for players
-            of all ages and skill levels.
-          </p>
-          <div className="mt-10 flex items-center gap-x-6">
-            <Link
-              href="/register"
-              className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              Register Now
-            </Link>
-            <Link
-              href="/programs"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              View Programs <span aria-hidden="true">→</span>
-            </Link>
+
+          {/* Right side content - Video/Image */}
+          <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+              <div className="relative">
+                {/* Glowing border effect */}
+                <div className="from-primary-600/20 to-accent-600/20 absolute -inset-4 rounded-3xl bg-gradient-to-r blur-xl"></div>
+
+                {/* Main image container */}
+                <div className="relative overflow-hidden rounded-2xl bg-gray-900 shadow-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="New Wave Academy training facility"
+                    width={800}
+                    height={1000}
+                    className="h-96 w-full object-cover lg:h-[700px]"
+                  />
+
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mx-auto mt-12 flex max-w-2xl sm:mt-16 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <Image
-              src="/court.webp"
-              alt="New Wave Academy basketball court"
-              width={2432}
-              height={1442}
-              className="h-auto max-h-[30rem] w-[55rem] rounded-md bg-white/5 object-cover shadow-2xl ring-1 ring-white/10"
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="animate-bounce">
+          <svg
+            className="h-6 w-6 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
-          </div>
+          </svg>
         </div>
       </div>
     </div>
