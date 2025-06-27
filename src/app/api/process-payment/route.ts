@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
+// @ts-ignore - squareup module doesn't have TypeScript definitions
 import { Client, Environment } from 'squareup'
 
 // Initialize Square client
 const client = new Client({
   accessToken: process.env.SQUARE_ACCESS_TOKEN,
-  environment: process.env.NODE_ENV === 'production' ? Environment.Production : Environment.Sandbox
+  environment:
+    process.env.NODE_ENV === 'production'
+      ? Environment.Production
+      : Environment.Sandbox,
 })
 
 const { paymentsApi } = client
@@ -18,7 +22,7 @@ export async function POST(request: NextRequest) {
     if (!sourceId || !amountMoney || !idempotencyKey) {
       return NextResponse.json(
         { error: 'Missing required payment fields' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -47,7 +51,7 @@ export async function POST(request: NextRequest) {
           paymentId: payment.id,
           paymentStatus: payment.status,
           amount: amountMoney.amount,
-          createdAt: new Date().toISOString()
+          createdAt: new Date().toISOString(),
         })
 
         // Send confirmation email (you would implement this)
@@ -57,18 +61,19 @@ export async function POST(request: NextRequest) {
           success: true,
           paymentId: payment.id,
           paymentStatus: payment.status,
-          message: 'Registration completed successfully!'
+          message: 'Registration completed successfully!',
         })
       } catch (dbError) {
         console.error('Error saving registration:', dbError)
-        
+
         // Payment succeeded but registration save failed
         // You might want to implement a rollback or manual review process
         return NextResponse.json({
           success: true,
           paymentId: payment.id,
-          warning: 'Payment processed but registration data needs manual review',
-          message: 'Payment completed. Our team will contact you shortly.'
+          warning:
+            'Payment processed but registration data needs manual review',
+          message: 'Payment completed. Our team will contact you shortly.',
         })
       }
     } else {
@@ -76,22 +81,22 @@ export async function POST(request: NextRequest) {
     }
   } catch (error: any) {
     console.error('Payment processing error:', error)
-    
+
     // Handle specific Square API errors
     if (error.result && error.result.errors) {
       const squareError = error.result.errors[0]
       return NextResponse.json(
-        { 
+        {
           error: squareError.detail || 'Payment processing failed',
-          code: squareError.code 
+          code: squareError.code,
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     return NextResponse.json(
       { error: 'Internal server error during payment processing' },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
@@ -100,7 +105,7 @@ async function saveRegistrationData(data: any) {
   // This is where you would save to your database
   // For now, we'll just log it and simulate saving
   console.log('Saving registration data:', data)
-  
+
   // Example using a database (you would implement this based on your setup):
   // const registration = await db.registrations.create({
   //   data: {
@@ -120,17 +125,20 @@ async function saveRegistrationData(data: any) {
   //     createdAt: new Date()
   //   }
   // })
-  
+
   // For demonstration, we'll simulate a successful save
-  await new Promise(resolve => setTimeout(resolve, 500))
+  await new Promise((resolve) => setTimeout(resolve, 500))
   return true
 }
 
 async function sendConfirmationEmail(registrationData: any) {
   // This is where you would send confirmation emails
   // You could use services like SendGrid, Mailgun, or AWS SES
-  console.log('Sending confirmation email to:', registrationData.playerData.email)
-  
+  console.log(
+    'Sending confirmation email to:',
+    registrationData.playerData.email,
+  )
+
   // Example email content:
   const emailData = {
     to: registrationData.playerData.email,
@@ -150,19 +158,19 @@ async function sendConfirmationEmail(registrationData: any) {
       <p>Our team will contact you within 24 hours to finalize your schedule and answer any questions.</p>
       <p>Welcome to the Thunder family!</p>
       <p>Best regards,<br>New Wave Academy Team</p>
-    `
+    `,
   }
-  
+
   // Simulate email sending
-  await new Promise(resolve => setTimeout(resolve, 300))
+  await new Promise((resolve) => setTimeout(resolve, 300))
   return true
 }
 
 // Health check endpoint
 export async function GET() {
-  return NextResponse.json({ 
+  return NextResponse.json({
     status: 'healthy',
     service: 'Square Payment Processing',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   })
-} 
+}
