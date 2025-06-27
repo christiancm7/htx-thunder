@@ -1,17 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-// @ts-ignore - squareup module doesn't have TypeScript definitions
-import { Client, Environment } from 'squareup'
+import { SquareClient } from 'square'
 
 // Initialize Square client
-const client = new Client({
-  accessToken: process.env.SQUARE_ACCESS_TOKEN,
-  environment:
-    process.env.NODE_ENV === 'production'
-      ? Environment.Production
-      : Environment.Sandbox,
+const client = new SquareClient({
+  token: process.env.SQUARE_ACCESS_TOKEN,
+  environment: process.env.NODE_ENV === 'production' ? 'production' : 'sandbox',
 })
-
-const { paymentsApi } = client
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,20 +23,22 @@ export async function POST(request: NextRequest) {
     // Process payment with Square
     const paymentRequest = {
       sourceId,
-      amountMoney,
+      amountMoney: {
+        amount: BigInt(amountMoney.amount),
+        currency: amountMoney.currency || 'USD',
+      },
       idempotencyKey,
       autocomplete: true,
       locationId: process.env.SQUARE_LOCATION_ID,
       note: 'New Wave Academy Registration',
-      orderId: undefined, // Optional: can be set if you're using Square Orders API
     }
 
     console.log('Processing payment request:', paymentRequest)
 
-    const response = await paymentsApi.createPayment(paymentRequest)
+    const response = await client.payments.create(paymentRequest)
 
-    if (response.result.payment) {
-      const payment = response.result.payment
+    if (response.payment) {
+      const payment = response.payment
 
       // Payment successful - save registration data
       try {
@@ -83,8 +79,8 @@ export async function POST(request: NextRequest) {
     console.error('Payment processing error:', error)
 
     // Handle specific Square API errors
-    if (error.result && error.result.errors) {
-      const squareError = error.result.errors[0]
+    if (error.body && error.body.errors) {
+      const squareError = error.body.errors[0]
       return NextResponse.json(
         {
           error: squareError.detail || 'Payment processing failed',
