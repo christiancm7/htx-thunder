@@ -50,6 +50,16 @@ const features = [
 
 const testimonials = [
   {
+    name: 'Tyler Rodriguez',
+    role: 'Basketball Training Program',
+    imageUrl:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=80',
+    quote:
+      "Coach Nicholas Perez has completely transformed my game. His attention to fundamentals and individual development approach helped me gain confidence on and off the court. He truly cares about each player's growth.",
+    achievement: 'Made Varsity Team & Improved Shooting 40%',
+    rating: 5,
+  },
+  {
     name: 'Marcus Johnson',
     role: 'High School Elite Graduate',
     imageUrl:
@@ -104,56 +114,23 @@ const stats = [
   },
 ]
 
-const trainingFocus = [
-  {
-    title: 'Shooting Excellence',
-    description:
-      'Master perfect shooting mechanics with our biomechanics-based approach and real-time feedback systems.',
-    image:
-      'https://images.unsplash.com/photo-1581390649541-ec100910c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    features: [
-      'Biomechanical Analysis',
-      'Shot Tracking Technology',
-      'Range Extension Program',
-    ],
-  },
-  {
-    title: 'Elite Ball Handling',
-    description:
-      'Develop unshakeable confidence with the ball through progressive skill development and game-situation training.',
-    image:
-      'https://images.unsplash.com/flagged/photo-1580051671644-53be1019725e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    features: [
-      'Advanced Dribbling Patterns',
-      'Pressure Training',
-      'Game Application Drills',
-    ],
-  },
-  {
-    title: 'Basketball IQ',
-    description:
-      'Elevate your understanding of the game through film study, strategic training, and decision-making development.',
-    image:
-      'https://images.unsplash.com/flagged/photo-1580051706353-f037886dedac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    features: [
-      'Film Study Sessions',
-      'Strategic Game Analysis',
-      'Leadership Development',
-    ],
-  },
-  {
-    title: 'Athletic Performance',
-    description:
-      'Maximize your physical potential with sport-specific conditioning and injury prevention protocols.',
-    image:
-      'https://images.unsplash.com/photo-1581390561595-2544b8d26538?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    features: [
-      'Strength & Conditioning',
-      'Speed & Agility Training',
-      'Recovery Protocols',
-    ],
-  },
-]
+const basketballTraining = {
+  title: 'Complete Basketball Training',
+  description:
+    'Comprehensive basketball development program designed for kids of all ages and skill levels. From fundamentals to advanced techniques, we build well-rounded players.',
+  image:
+    'https://images.unsplash.com/photo-1581390649541-ec100910c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  features: [
+    'Fundamental Skills Development',
+    'Shooting Technique & Form',
+    'Ball Handling & Dribbling',
+    'Defensive Positioning',
+    'Game Strategy & Basketball IQ',
+    'Physical Conditioning',
+    'Teamwork & Sportsmanship',
+    'Age-Appropriate Progression',
+  ],
+}
 
 export default function Home() {
   return (
@@ -174,7 +151,7 @@ export default function Home() {
                     }`}
                   >
                     {stat.highlight && (
-                      <div className="from-primary-500/10 to-primary-600/10 absolute inset-0 rounded-2xl bg-gradient-to-r blur-xl"></div>
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500/10 to-primary-600/10 blur-xl"></div>
                     )}
                     <div className="relative">
                       <dt className="text-sm font-medium text-gray-600 lg:text-base">
@@ -200,7 +177,7 @@ export default function Home() {
       <div className="section-padding bg-gray-50">
         <div className="container-padding mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+            <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
               Elite Basketball Development
             </h2>
             <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
@@ -221,9 +198,9 @@ export default function Home() {
                   key={feature.name}
                   className="card-hover group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8"
                 >
-                  <div className="from-primary-500/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   <div className="relative">
-                    <div className="from-primary-600 to-primary-700 mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r text-white shadow-lg">
+                    <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg">
                       <feature.icon className="h-7 w-7" aria-hidden="true" />
                     </div>
                     <h3 className="mb-4 text-xl font-semibold text-gray-900">
@@ -240,54 +217,54 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Training Focus Section */}
+      {/* Basketball Training Section */}
       <div className="section-padding">
         <div className="container-padding mx-auto max-w-7xl">
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
-              Comprehensive Training
+            <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
+              Youth Basketball Training
             </h2>
             <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
-              Master Every Aspect of
-              <span className="gradient-text"> Championship Basketball</span>
+              Complete Basketball Development for
+              <span className="gradient-text"> All Ages</span>
+            </p>
+            <p className="mt-6 text-balance text-xl leading-8 text-gray-600">
+              Our comprehensive training program, led by Head Coach Nicholas
+              Perez, builds fundamental skills, confidence, and love for the
+              game in young athletes of every skill level.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {trainingFocus.map((focus, index) => (
-              <div
-                key={focus.title}
-                className="card-hover group relative overflow-hidden rounded-3xl bg-white shadow-lg"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={focus.image}
-                    alt={focus.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/20 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="mb-4 text-2xl font-bold text-gray-900">
-                    {focus.title}
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-gray-600">
-                    {focus.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {focus.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-center text-sm text-gray-600"
-                      >
-                        <CheckIcon className="text-primary-600 mr-3 h-4 w-4 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+          <div className="mx-auto max-w-4xl">
+            <div className="card-hover group relative overflow-hidden rounded-3xl bg-white shadow-lg">
+              <div className="aspect-[16/9] overflow-hidden lg:aspect-[21/9]">
+                <img
+                  src={basketballTraining.image}
+                  alt={basketballTraining.title}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/20 to-transparent"></div>
+              </div>
+              <div className="p-8 lg:p-12">
+                <h3 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+                  {basketballTraining.title}
+                </h3>
+                <p className="mb-8 text-lg leading-relaxed text-gray-600 lg:text-xl">
+                  {basketballTraining.description}
+                </p>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {basketballTraining.features.map((feature) => (
+                    <div
+                      key={feature}
+                      className="flex items-center text-gray-600"
+                    >
+                      <CheckIcon className="mr-3 h-5 w-5 flex-shrink-0 text-primary-600" />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
@@ -296,7 +273,7 @@ export default function Home() {
       <div className="section-padding bg-gray-50">
         <div className="container-padding mx-auto max-w-7xl">
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+            <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
               Success Stories
             </h2>
             <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
@@ -317,7 +294,7 @@ export default function Home() {
               >
                 <div className="absolute right-4 top-4 flex">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} className="text-accent-400 h-5 w-5" />
+                    <StarIcon key={i} className="h-5 w-5 text-accent-400" />
                   ))}
                 </div>
 
@@ -340,7 +317,7 @@ export default function Home() {
                   <div className="mb-2 text-sm text-gray-500">
                     {testimonial.role}
                   </div>
-                  <div className="text-primary-600 text-sm font-medium">
+                  <div className="text-sm font-medium text-primary-600">
                     {testimonial.achievement}
                   </div>
                 </div>
@@ -365,7 +342,7 @@ export default function Home() {
           <div className="container-padding mx-auto max-w-4xl text-center">
             <h2 className="text-balance text-4xl font-bold tracking-tight text-white lg:text-6xl">
               Your Championship Journey
-              <span className="from-accent-300 to-accent-500 bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent">
                 Starts Here
               </span>
             </h2>
@@ -376,14 +353,14 @@ export default function Home() {
             </p>
             <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <a
-                href="/admissions"
-                className="btn-primary hover:shadow-accent-500/25 px-8 py-4 text-lg shadow-2xl"
+                href="/register"
+                className="btn-primary px-8 py-4 text-lg shadow-2xl hover:shadow-accent-500/25"
               >
                 Begin Your Journey
               </a>
               <a
                 href="/programs"
-                className="hover:text-accent-300 inline-flex items-center text-lg font-semibold leading-6 text-white transition-colors"
+                className="inline-flex items-center text-lg font-semibold leading-6 text-white transition-colors hover:text-accent-300"
               >
                 Explore Programs
                 <svg

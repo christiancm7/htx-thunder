@@ -106,9 +106,6 @@ export function Header() {
                             <MobileNavLink href="/programs">
                               Programs
                             </MobileNavLink>
-                            <MobileNavLink href="/facilities">
-                              Facilities
-                            </MobileNavLink>
                             <MobileNavLink href="/contact">
                               Contact
                             </MobileNavLink>

@@ -91,9 +91,9 @@ export function Hero() {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="bg-primary-500/10 animate-pulse-slow absolute -right-40 -top-40 h-80 w-80 rounded-full blur-3xl"></div>
-        <div className="bg-accent-500/10 animate-pulse-slow absolute -left-40 top-1/2 h-96 w-96 rounded-full blur-3xl delay-1000"></div>
-        <div className="bg-primary-600/10 animate-pulse-slow delay-2000 absolute -bottom-40 right-1/3 h-64 w-64 rounded-full blur-3xl"></div>
+        <div className="absolute -right-40 -top-40 h-80 w-80 animate-pulse-slow rounded-full bg-primary-500/10 blur-3xl"></div>
+        <div className="absolute -left-40 top-1/2 h-96 w-96 animate-pulse-slow rounded-full bg-accent-500/10 blur-3xl delay-1000"></div>
+        <div className="delay-2000 absolute -bottom-40 right-1/3 h-64 w-64 animate-pulse-slow rounded-full bg-primary-600/10 blur-3xl"></div>
       </div>
 
       {/* Grid Pattern Overlay */}
@@ -124,10 +124,10 @@ export function Hero() {
             {/* Badge */}
             <div className="flex">
               <div className="group relative rounded-full px-4 py-2 text-sm leading-6 text-gray-300 ring-1 ring-gray-600 transition-all duration-300 hover:ring-gray-500">
-                <span className="from-primary-600/20 to-accent-600/20 absolute inset-0 rounded-full bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-600/20 to-accent-600/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                 <span className="relative flex items-center gap-2">
-                  <span className="bg-accent-400 h-2 w-2 animate-pulse rounded-full"></span>
-                  Now Enrolling for 2024 Programs
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-accent-400"></span>
+                  Now Enrolling for 2025 Programs
                   <svg
                     className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
                     fill="none"
@@ -147,10 +147,10 @@ export function Hero() {
 
             {/* Main Heading */}
             <h1 className="mt-10 max-w-lg text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
-              <span className="from-primary-400 via-primary-500 to-accent-400 font-heading block bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-accent-400 bg-clip-text font-heading text-transparent">
                 New.Wave
               </span>
-              <span className="font-heading block">Academy</span>
+              <span className="block font-heading">Academy</span>
             </h1>
 
             {/* Subheading */}
@@ -163,15 +163,15 @@ export function Hero() {
             {/* Features List */}
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <div className="bg-primary-500 h-2 w-2 rounded-full"></div>
+                <div className="h-2 w-2 rounded-full bg-primary-500"></div>
                 Professional Coaches
               </div>
               <div className="flex items-center gap-2">
-                <div className="bg-accent-500 h-2 w-2 rounded-full"></div>
+                <div className="h-2 w-2 rounded-full bg-accent-500"></div>
                 Championship Facilities
               </div>
               <div className="flex items-center gap-2">
-                <div className="bg-primary-500 h-2 w-2 rounded-full"></div>
+                <div className="h-2 w-2 rounded-full bg-primary-500"></div>
                 Proven Results
               </div>
             </div>
@@ -180,9 +180,9 @@ export function Hero() {
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
               <Link
                 href="/register"
-                className="from-primary-600 to-primary-700 hover:shadow-primary-500/25 focus:ring-primary-500 group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r px-8 py-4 text-lg font-semibold text-white shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-4 text-lg font-semibold text-white shadow-2xl transition-all duration-300 hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
-                <span className="from-primary-700 to-primary-800 absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-primary-700 to-primary-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                 <span className="relative flex items-center gap-2">
                   Start Your Journey
                   <svg
@@ -203,7 +203,7 @@ export function Hero() {
 
               <Link
                 href="/programs"
-                className="hover:border-primary-500 hover:bg-primary-500/10 focus:ring-primary-500 group inline-flex items-center justify-center rounded-lg border-2 border-gray-600 bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="group inline-flex items-center justify-center rounded-lg border-2 border-gray-600 bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-primary-500 hover:bg-primary-500/10 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 <span className="flex items-center gap-2">
                   View Programs
@@ -253,7 +253,7 @@ export function Hero() {
             <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
               <div className="relative">
                 {/* Glowing border effect */}
-                <div className="from-primary-600/20 to-accent-600/20 absolute -inset-4 rounded-3xl bg-gradient-to-r blur-xl"></div>
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary-600/20 to-accent-600/20 blur-xl"></div>
 
                 {/* Main image container */}
                 <div className="relative overflow-hidden rounded-2xl bg-gray-900 shadow-2xl">

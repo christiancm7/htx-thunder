@@ -50,7 +50,6 @@ const socialLinks = [
 const quickLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Programs', href: '/programs' },
-  { name: 'Facilities', href: '/facilities' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -88,7 +87,7 @@ export function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="hover:text-primary-400 text-gray-400 transition-colors"
+                  className="text-gray-400 transition-colors hover:text-primary-400"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -105,7 +104,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="hover:text-primary-400 text-gray-300 transition-colors"
+                    className="text-gray-300 transition-colors hover:text-primary-400"
                   >
                     {link.name}
                   </Link>
@@ -122,7 +121,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="hover:text-primary-400 text-gray-300 transition-colors"
+                    className="text-gray-300 transition-colors hover:text-primary-400"
                   >
                     {link.name}
                   </Link>
@@ -136,13 +135,13 @@ export function Footer() {
             <h3 className="text-lg font-semibold text-white">Contact Info</h3>
             <div className="mt-6 space-y-4">
               <div className="flex items-start">
-                <MapPinIcon className="text-primary-400 mt-0.5 h-5 w-5 flex-shrink-0" />
+                <MapPinIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-400" />
                 <div className="ml-3">
                   <a
                     href="https://maps.google.com/maps?q=5811+Chimney+Rock+Road+Houston+TX+77081"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary-400 text-gray-300 transition-colors"
+                    className="text-gray-300 transition-colors hover:text-primary-400"
                   >
                     5811 Chimney Rock Road
                     <br />
@@ -152,27 +151,27 @@ export function Footer() {
               </div>
 
               <div className="flex items-center">
-                <PhoneIcon className="text-primary-400 h-5 w-5 flex-shrink-0" />
+                <PhoneIcon className="h-5 w-5 flex-shrink-0 text-primary-400" />
                 <a
                   href="tel:281-889-0047"
-                  className="hover:text-primary-400 ml-3 text-gray-300 transition-colors"
+                  className="ml-3 text-gray-300 transition-colors hover:text-primary-400"
                 >
                   (281) 889-0047
                 </a>
               </div>
 
               <div className="flex items-center">
-                <EnvelopeIcon className="text-primary-400 h-5 w-5 flex-shrink-0" />
+                <EnvelopeIcon className="h-5 w-5 flex-shrink-0 text-primary-400" />
                 <a
-                  href="mailto:info@newwaveacademy.com"
-                  className="hover:text-primary-400 ml-3 text-gray-300 transition-colors"
+                  href="mailto:info@newwaveprepacademy.com"
+                  className="ml-3 text-gray-300 transition-colors hover:text-primary-400"
                 >
-                  info@newwaveacademy.com
+                  info@newwaveprepacademy.com
                 </a>
               </div>
 
               <div className="flex items-start">
-                <ClockIcon className="text-primary-400 mt-0.5 h-5 w-5 flex-shrink-0" />
+                <ClockIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-400" />
                 <div className="ml-3 text-gray-300">
                   <p className="font-medium">Training Hours:</p>
                   <p className="text-sm">Mon-Fri: 3:00 PM - 9:00 PM</p>
@@ -201,7 +200,7 @@ export function Footer() {
               </Link>
               <Link
                 href="/contact"
-                className="border-primary-500 text-primary-400 hover:bg-primary-500 inline-flex items-center justify-center rounded-lg border-2 px-8 py-3 text-lg font-semibold transition-all hover:text-white"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-primary-500 px-8 py-3 text-lg font-semibold text-primary-400 transition-all hover:bg-primary-500 hover:text-white"
               >
                 Schedule a Visit
               </Link>
@@ -220,19 +219,19 @@ export function Footer() {
               <div className="flex space-x-6 text-sm text-gray-400">
                 <Link
                   href="/privacy"
-                  className="hover:text-primary-400 transition-colors"
+                  className="transition-colors hover:text-primary-400"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="hover:text-primary-400 transition-colors"
+                  className="transition-colors hover:text-primary-400"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/sitemap"
-                  className="hover:text-primary-400 transition-colors"
+                  className="transition-colors hover:text-primary-400"
                 >
                   Sitemap
                 </Link>

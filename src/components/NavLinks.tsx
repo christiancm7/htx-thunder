@@ -12,8 +12,7 @@ export function NavLinks() {
     ['Home', '/'],
     ['About', '/about'],
     ['Programs', '/programs'],
-    ['Facilities', '/facilities'],
-    ['Admissions', '/admissions'],
+    ['Register', '/register'],
     ['Contact', '/contact'],
   ].map(([label, href], index) => (
     <Link

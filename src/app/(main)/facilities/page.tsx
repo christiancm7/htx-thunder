@@ -115,13 +115,13 @@ export default function FacilitiesPage() {
             className="object-cover opacity-20"
             priority
           />
-          <div className="from-primary-900/95 via-primary-800/80 to-primary-900/95 absolute inset-0 bg-gradient-to-r"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-900/95 via-primary-800/80 to-primary-900/95"></div>
         </div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="bg-primary-500/10 animate-pulse-slow absolute -right-40 -top-40 h-80 w-80 rounded-full blur-3xl"></div>
-          <div className="bg-accent-500/10 animate-pulse-slow absolute -left-40 top-1/2 h-96 w-96 rounded-full blur-3xl delay-1000"></div>
+          <div className="absolute -right-40 -top-40 h-80 w-80 animate-pulse-slow rounded-full bg-primary-500/10 blur-3xl"></div>
+          <div className="absolute -left-40 top-1/2 h-96 w-96 animate-pulse-slow rounded-full bg-accent-500/10 blur-3xl delay-1000"></div>
         </div>
 
         <div className="relative flex min-h-[80vh] items-center">
@@ -130,9 +130,9 @@ export default function FacilitiesPage() {
               {/* Badge */}
               <div className="mb-8 flex justify-center">
                 <div className="group relative rounded-full px-4 py-2 text-sm leading-6 text-gray-300 ring-1 ring-gray-600 transition-all duration-300 hover:ring-gray-500">
-                  <span className="from-primary-600/20 to-accent-600/20 absolute inset-0 rounded-full bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-600/20 to-accent-600/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                   <span className="relative flex items-center gap-2">
-                    <span className="bg-accent-400 h-2 w-2 animate-pulse rounded-full"></span>
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-accent-400"></span>
                     20,000 Sq Ft Elite Training Center
                   </span>
                 </div>
@@ -141,7 +141,7 @@ export default function FacilitiesPage() {
               {/* Main Heading */}
               <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
                 <span className="block">World-Class</span>
-                <span className="from-primary-400 via-primary-500 to-accent-400 block bg-gradient-to-r bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-accent-400 bg-clip-text text-transparent">
                   Training Facility
                 </span>
               </h1>
@@ -156,7 +156,7 @@ export default function FacilitiesPage() {
               {/* Location Badge */}
               <div className="mt-12 flex justify-center">
                 <div className="flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 backdrop-blur-sm">
-                  <MapPinIcon className="text-accent-400 h-5 w-5" />
+                  <MapPinIcon className="h-5 w-5 text-accent-400" />
                   <span className="font-medium text-white">
                     5811 Chimney Rock Road, Houston, TX 77081
                   </span>
@@ -171,7 +171,7 @@ export default function FacilitiesPage() {
       <div className="section-padding bg-gray-50">
         <div className="container-padding mx-auto max-w-7xl">
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+            <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
               Elite Facilities
             </h2>
             <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
@@ -205,7 +205,7 @@ export default function FacilitiesPage() {
 
                     {/* Icon Overlay */}
                     <div className="absolute bottom-6 left-6 z-20">
-                      <div className="from-primary-600 to-primary-700 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r text-white shadow-lg">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg">
                         <feature.icon className="h-6 w-6" />
                       </div>
                     </div>
@@ -231,7 +231,7 @@ export default function FacilitiesPage() {
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                         {feature.features.map((item) => (
                           <div key={item} className="flex items-start">
-                            <CheckIcon className="text-primary-600 mr-3 mt-0.5 h-4 w-4 flex-shrink-0" />
+                            <CheckIcon className="mr-3 mt-0.5 h-4 w-4 flex-shrink-0 text-primary-600" />
                             <span className="text-sm text-gray-600">
                               {item}
                             </span>
@@ -262,7 +262,7 @@ export default function FacilitiesPage() {
       <div className="section-padding">
         <div className="container-padding mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="text-primary-600 text-base font-semibold uppercase leading-7 tracking-wide">
+            <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
               Premium Amenities
             </h2>
             <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
@@ -277,9 +277,9 @@ export default function FacilitiesPage() {
                 key={amenity.title}
                 className="card-hover group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8"
               >
-                <div className="from-primary-500/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 <div className="relative">
-                  <div className="from-primary-600 to-primary-700 mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r text-white shadow-lg">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg">
                     <amenity.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <h3 className="mb-3 text-xl font-semibold text-gray-900">
@@ -302,7 +302,7 @@ export default function FacilitiesPage() {
             {/* Operating Hours */}
             <div className="glass-effect rounded-3xl p-8 lg:p-12">
               <div className="mb-8">
-                <div className="from-primary-600 to-primary-700 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r text-white">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white">
                   <ClockIcon className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
@@ -338,7 +338,7 @@ export default function FacilitiesPage() {
             <div className="mt-12 lg:mt-0">
               <div className="glass-effect rounded-3xl p-8 lg:p-12">
                 <div className="mb-8">
-                  <div className="from-primary-600 to-primary-700 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r text-white">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white">
                     <MapPinIcon className="h-6 w-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">
@@ -372,10 +372,10 @@ export default function FacilitiesPage() {
                       <br />
                       Email:{' '}
                       <a
-                        href="mailto:info@newwaveacademy.com"
+                        href="mailto:info@newwaveprepacademy.com"
                         className="text-primary-600 hover:text-primary-500"
                       >
-                        info@newwaveacademy.com
+                        info@newwaveprepacademy.com
                       </a>
                     </p>
                   </div>
@@ -411,7 +411,7 @@ export default function FacilitiesPage() {
           <div className="container-padding mx-auto max-w-4xl text-center">
             <h2 className="text-balance text-4xl font-bold tracking-tight text-white lg:text-6xl">
               Experience Excellence
-              <span className="from-accent-300 to-accent-500 bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent">
                 {' '}
                 Firsthand
               </span>
@@ -423,13 +423,13 @@ export default function FacilitiesPage() {
             <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
               <Link
                 href="/contact"
-                className="btn-primary hover:shadow-accent-500/25 px-8 py-4 text-lg shadow-2xl"
+                className="btn-primary px-8 py-4 text-lg shadow-2xl hover:shadow-accent-500/25"
               >
                 Book Your Tour
               </Link>
               <Link
                 href="/programs"
-                className="hover:text-accent-300 inline-flex items-center text-lg font-semibold leading-6 text-white transition-colors"
+                className="inline-flex items-center text-lg font-semibold leading-6 text-white transition-colors hover:text-accent-300"
               >
                 View Programs
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
