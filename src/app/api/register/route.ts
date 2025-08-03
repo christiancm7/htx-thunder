@@ -77,8 +77,8 @@ Next Steps:
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: 'website@newwaveprepacademy.com',
-      to: ['info@newwaveprepacademy.com'],
+      from: 'onboarding@resend.dev',
+      to: ['newwaveprepacademy@gmail.com'],
       subject: `New Registration: ${registrationData.playerFirstName} ${registrationData.playerLastName}`,
       text: emailContent,
     })

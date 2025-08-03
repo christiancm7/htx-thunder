@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: 'New Wave Academy | Houston Basketball Training',
   },
   description:
-    "New Wave Academy is Houston's premier basketball training facility. We offer elite training programs, camps, and development opportunities for players of all ages and skill levels. Join us to elevate your game with our state-of-the-art facilities and expert coaching staff.",
+    "New Wave Academy is Houston's premier basketball training facility. We offer elite training programs, camps, and development opportunities for players of all ages and skill levels. Join us to elevate your game with our state-of-the-art facilities and expert coaching from Nicholas Perez.",
 }
 
 export default function RootLayout({

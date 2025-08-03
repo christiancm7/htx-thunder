@@ -40,8 +40,8 @@ From: Website Contact Form
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: 'website@newwaveprepacademy.com',
-      to: ['info@newwaveprepacademy.com'],
+      from: 'onboarding@resend.dev',
+      to: ['newwaveprepacademy@gmail.com'],
       subject: `New Contact Form Submission - ${contactData.firstName} ${contactData.lastName}`,
       text: emailContent,
     })

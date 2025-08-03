@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 const features = [
   {
-    name: 'Elite Coaching Staff',
+    name: 'Expert Head Coach',
     description:
       'Train with former college and professional players who bring years of high-level experience and proven development methodologies.',
     icon: TrophyIcon,
@@ -75,7 +75,7 @@ const testimonials = [
     imageUrl:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.5&w=160&h=160&q=80',
     quote:
-      'The coaches at New Wave Academy understand that development goes beyond just basketball. They build character, confidence, and leadership skills that last a lifetime.',
+      'Coach Nicholas Perez at New Wave Academy understands that development goes beyond just basketball. He builds character, confidence, and leadership skills that last a lifetime.',
     achievement: 'Team Captain & Academic All-Star',
     rating: 5,
   },
@@ -104,7 +104,7 @@ const stats = [
   },
   {
     value: '20+',
-    label: 'Former college & pro coaches on staff',
+    label: 'Years of professional coaching experience',
     highlight: false,
   },
   {

@@ -60,7 +60,7 @@ const programBenefits = [
   },
   {
     title: 'Expert Coaching',
-    description: 'Professional coaches who understand youth development',
+    description: 'Professional coaching that understands youth development',
     icon: TrophyIcon,
   },
   {

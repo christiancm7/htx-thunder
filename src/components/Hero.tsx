@@ -164,7 +164,7 @@ export function Hero() {
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-primary-500"></div>
-                Professional Coaches
+                Professional Coach
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-accent-500"></div>
@@ -242,7 +242,7 @@ export function Hero() {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">20+</div>
-                  <div className="text-xs text-gray-400">Pro Coaches</div>
+                  <div className="text-xs text-gray-400">Pro Coach</div>
                 </div>
               </div>
             </div>

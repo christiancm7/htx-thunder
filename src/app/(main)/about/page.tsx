@@ -20,7 +20,7 @@ import Link from 'next/link'
 
 const stats = [
   { label: 'Founded', value: '2020', highlight: false },
-  { label: 'Expert Coaches', value: '20+', highlight: true },
+  { label: 'Years Experience', value: '20+', highlight: true },
   { label: 'Players Trained', value: '5,000+', highlight: false },
   { label: 'Success Rate', value: '100%', highlight: true },
 ]
@@ -142,25 +142,10 @@ const coaches = [
       'Fundamental Skills',
       'Character Building',
       'Game Strategy',
+      'Individual Skill Development',
+      'Team Building',
     ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Sarah Williams',
-    role: 'Skills Development Coach',
-    experience: 'Former WNBA Player & Skills Specialist',
-    specialties: ['Shooting Mechanics', 'Ball Handling', 'Footwork'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'David Rodriguez',
-    role: 'Performance Coach',
-    experience: 'Certified Strength & Conditioning Specialist',
-    specialties: ['Athletic Performance', 'Injury Prevention', 'Recovery'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    imageUrl: '/nickphoto.png',
   },
 ]
 
@@ -588,69 +573,74 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Elite Coaching Team Section */}
+        {/* Head Coach Section */}
         <div className="section-padding">
           <div className="container-padding mx-auto max-w-7xl">
             <div className="mx-auto mb-20 max-w-3xl text-center">
               <h2 className="text-base font-semibold uppercase leading-7 tracking-wide text-primary-600">
-                Elite Coaching Staff
+                Meet Your Head Coach
               </h2>
               <p className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
                 Learn from
-                <span className="gradient-text"> Championship Coaches</span>
+                <span className="gradient-text"> Coach Nicholas Perez</span>
               </p>
               <p className="mt-6 text-balance text-xl leading-8 text-gray-600">
-                Our coaching staff combines decades of professional and
-                collegiate experience with cutting-edge training methodologies
-                to develop champions.
+                Led by a former professional player with extensive youth
+                development experience, our program combines proven training
+                methodologies with personalized attention to develop champions
+                both on and off the court.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              {coaches.map((coach, index) => (
-                <div
-                  key={coach.name}
-                  className="card-hover group relative overflow-hidden rounded-2xl bg-white shadow-lg"
-                >
-                  <div className="p-8">
-                    <div className="mb-6 flex items-center">
-                      <img
-                        className="h-20 w-20 rounded-full object-cover"
-                        src={coach.imageUrl}
-                        alt={coach.name}
-                      />
-                      <div className="ml-4">
-                        <h3 className="text-xl font-bold text-gray-900">
-                          {coach.name}
-                        </h3>
-                        <p className="font-medium text-primary-600">
-                          {coach.role}
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          {coach.experience}
-                        </p>
+            <div className="flex justify-center">
+              <div className="max-w-lg">
+                {coaches.map((coach, index) => (
+                  <div
+                    key={coach.name}
+                    className="card-hover group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                  >
+                    <div className="p-8">
+                      <div className="mb-6 flex items-center">
+                        <Image
+                          className="h-20 w-20 rounded-full object-cover"
+                          src={coach.imageUrl}
+                          alt={coach.name}
+                          width={80}
+                          height={80}
+                        />
+                        <div className="ml-4">
+                          <h3 className="text-xl font-bold text-gray-900">
+                            {coach.name}
+                          </h3>
+                          <p className="font-medium text-primary-600">
+                            {coach.role}
+                          </p>
+                          <p className="mt-1 text-sm text-gray-500">
+                            {coach.experience}
+                          </p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div>
-                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-900">
-                        Specialties
-                      </h4>
-                      <div className="space-y-2">
-                        {coach.specialties.map((specialty) => (
-                          <div
-                            key={specialty}
-                            className="flex items-center text-sm text-gray-600"
-                          >
-                            <CheckCircleIcon className="mr-2 h-4 w-4 flex-shrink-0 text-primary-600" />
-                            {specialty}
-                          </div>
-                        ))}
+                      <div>
+                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-900">
+                          Specialties
+                        </h4>
+                        <div className="space-y-2">
+                          {coach.specialties.map((specialty) => (
+                            <div
+                              key={specialty}
+                              className="flex items-center text-sm text-gray-600"
+                            >
+                              <CheckCircleIcon className="mr-2 h-4 w-4 flex-shrink-0 text-primary-600" />
+                              {specialty}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
