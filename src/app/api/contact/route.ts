@@ -33,7 +33,7 @@ From: Website Contact Form
       timestamp: new Date().toISOString(),
     })
 
-    console.log('Sending email to info@newwaveprepacademy.com:')
+    console.log('Sending email to cmoralestech@gmail.com:')
     console.log(emailContent)
 
     // Send email using Resend
@@ -41,7 +41,7 @@ From: Website Contact Form
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['newwaveprepacademy@gmail.com'],
+      to: ['cmoralestech@gmail.com'],
       subject: `New Contact Form Submission - ${contactData.firstName} ${contactData.lastName}`,
       text: emailContent,
     })

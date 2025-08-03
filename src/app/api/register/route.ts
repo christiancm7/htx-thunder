@@ -70,7 +70,7 @@ Next Steps:
 4. Send welcome packet with policies
     `.trim()
 
-    console.log('Sending registration email to info@newwaveprepacademy.com:')
+    console.log('Sending registration email to cmoralestech@gmail.com:')
     console.log(emailContent)
 
     // Send email using Resend
@@ -78,7 +78,7 @@ Next Steps:
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['newwaveprepacademy@gmail.com'],
+      to: ['cmoralestech@gmail.com'],
       subject: `New Registration: ${registrationData.playerFirstName} ${registrationData.playerLastName}`,
       text: emailContent,
     })
