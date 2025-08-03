@@ -78,7 +78,7 @@ Next Steps:
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['info@newwaveprepacademy.com'],
+      to: ['newwaveprepacademy@gmail.com'],
       subject: `New Registration: ${registrationData.playerFirstName} ${registrationData.playerLastName}`,
       text: emailContent,
     })

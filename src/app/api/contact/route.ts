@@ -41,7 +41,7 @@ From: Website Contact Form
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['info@newwaveprepacademy.com'],
+      to: ['newwaveprepacademy@gmail.com'],
       subject: `New Contact Form Submission - ${contactData.firstName} ${contactData.lastName}`,
       text: emailContent,
     })
